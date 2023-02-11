@@ -18,12 +18,14 @@ function upimg(element) {
         if (Image.classList.contains('clicked')) {
             Image.classList.remove('clicked');
             uppass.splice(uppass.indexOf(element.id), 1);
+            counter--;
             // console.log(element.id);
             // console.log(uppass);
         }
         else {
             Image.classList.add('clicked');
             uppass.push(element.id);
+            counter++;
             // console.log(element.id);
             // console.log(uppass);
         }
@@ -57,20 +59,18 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
     if (!re.test(email)) {
       alert("Invalid email address");
       event.preventDefault();
-    }
-    else{
-        // console.log(counter);
-        // if(counter>0){
-            signup();
-        // }
-        // else{
-        //     alert("select any object");
-        // }
+    }else{
+        if(counter>0)signup();
+        else alert("Please select an object!");
     }
   });
 function signup() {
     sessionStorage.setItem("upname", document.getElementById('upmail').value);
     sessionStorage.setItem("uppass", uppass);
+    // console.log(uppass);
+    if(uppass.length== null){
+        alert("choose any object")
+    }
     var myText = "Account Created Succesfully";
     alert(myText);
     // console.log("run");
@@ -82,6 +82,7 @@ var v2 = new Boolean(false);
 function signin() {
     let str = document.getElementById('inmail').value;
     let array = sessionStorage.getItem("uppass");
+    
     let check1 = array.localeCompare(inpass.toString());
     if ((!str.localeCompare(sessionStorage.getItem("upname"))) && !check1) {
         var myText = "Login is successful";
@@ -106,7 +107,7 @@ var templateParams = {
     emailjs.send('service_ktz39ao', 'template_m1h3m8f', templateParams )
     .then(function(res){
         // console.log("Success", res.status);
-        alert("mail sent successfully");
+        alert("Wrong sequence, check your email");
     })
 }
 function sendMail2(){
