@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login Page</title>
+	<link rel="stylesheet" href="index.css">
+	<script src="https://kit.fontawesome.com/53b89dd49e.js" crossorigin="anonymous"></script>
+</head>
+<!-- email method -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+	(function () {
+		emailjs.init("epVHGFQIo-D_O1Zqw");
+	})();
+</script>
+
+<body>
+	<div class="container" id="container">
+		<div class="form-container sign-up-container">
+			<form action="#">
+				<h1>Create Account</h1>
+				<input type="text" placeholder="Name" />
+				<input type="email" placeholder="Email" id="upmail" />
+				<!-- <input type="password" placeholder="Password" /> -->
+				<div class="password">
+					<div class="row">
+						<div class="passimg" onclick="upimg(this)" id="s01"><img src="images/Slice 1.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s02"><img src="images/Slice 2.png" alt="" class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s03"><img src="images/Slice 3.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s04"><img src="images/Slice 4.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s05"><img src="images/Slice 5.png" alt=""class="patimg"></div>
+					</div>
+					<div class="row">
+						<div class="passimg" onclick="upimg(this)" id="s06"><img src="images/Slice 6.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s07"><img src="images/Slice 7.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s08"><img src="images/Slice 8.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s09"><img src="images/Slice 9.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s10"><img src="images/Slice 10.png" alt=""class="patimg"></div>
+					</div>
+					<div class="row">
+						<div class="passimg" onclick="upimg(this)" id="s11"><img src="images/Slice 11.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s12"><img src="images/Slice 12.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s13"><img src="images/Slice 13.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s14"><img src="images/Slice 14.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s15"><img src="images/Slice 15.png" alt=""class="patimg"></div>	
+					</div>
+				</div>
+				<button id="signupbtn" onclick="signup()">Sign Up</button>
+			</form>
+		</div>
+		<div class="form-container sign-in-container">
+			<form action="#">
+				<h1>Sign in</h1>
+				<input type="email" placeholder="Email" id="inmail" />
+				<!-- <input type="password" autocomplete="current-password" required placeholder="Password" /> -->
+				<div class="password">
+					<div class="row">
+						<div class="passimg" onclick="upimg(this)" id="s01"><img src="images/Slice 1.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s02"><img src="images/Slice 2.png" alt="" class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s03"><img src="images/Slice 3.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s04"><img src="images/Slice 4.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s05"><img src="images/Slice 5.png" alt=""class="patimg"></div>
+					</div>
+					<div class="row">
+						<div class="passimg" onclick="upimg(this)" id="s06"><img src="images/Slice 6.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s07"><img src="images/Slice 7.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s08"><img src="images/Slice 8.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s09"><img src="images/Slice 9.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s10"><img src="images/Slice 10.png" alt=""class="patimg"></div>
+					</div>
+					<div class="row">
+						<div class="passimg" onclick="upimg(this)" id="s11"><img src="images/Slice 11.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s12"><img src="images/Slice 12.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s13"><img src="images/Slice 13.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s14"><img src="images/Slice 14.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="upimg(this)" id="s15"><img src="images/Slice 15.png" alt=""class="patimg"></div>	
+					</div>
+				</div>
+				<a onclick="sendMail2()">Forgot your password?</a>
+				<button onclick="signin()">Sign In</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Hello! User</h1>
+					<p>Sign Up with our Graphical Authentication System</p>
+					<button class="ghost" id="signIn">Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Welcome Back!</h1>
+					<p>To keep connected with us please login with your personal info</p>
+					<button class="ghost" id="signUp">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="main.js"></script>
+</body>
+
+</html>
