@@ -73,6 +73,20 @@ button{
     transition: transform 80ms ease-in;  
     cursor: pointer;  
 }
+#signupbtn{
+    width: 150px;
+    border-radius: 20px;
+    border: 1px solid #2b3dff;
+    background: #2b3dff;
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;  
+    cursor: pointer;
+}
 button:active {
     transform: scale(0.95);
     background: #515ffc;

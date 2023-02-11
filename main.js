@@ -7,8 +7,7 @@ let inpass = [];
 signUpButton.addEventListener('click', () => {
     container.classList.add('right-panel-active');
 });
-
-
+var counter=0;
 signInButton.addEventListener('click', () => {
     container.classList.remove('right-panel-active');
 });
@@ -34,6 +33,8 @@ function upimg(element) {
 function inimg(element) {
     var Image = element.querySelector('img');
     if (Image) {
+        console.log("here");
+        counter++;
         if (Image.classList.contains('clicked')) {
             Image.classList.remove('clicked');
             inpass.splice(inpass.indexOf(element.id), 1);
@@ -47,14 +48,35 @@ function inimg(element) {
             // console.log(inpass);
         }
     }
+    
 }
-// element image recognition
+document.getElementById("myForm").addEventListener("submit", function(event) {
+    var email = document.getElementById("upmail").value;
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//    console.log(email);
+    if (!re.test(email)) {
+      alert("Invalid email address");
+      event.preventDefault();
+    }
+    else{
+        // console.log(counter);
+        // if(counter>0){
+            signup();
+        // }
+        // else{
+        //     alert("select any object");
+        // }
+    }
+  });
 function signup() {
     sessionStorage.setItem("upname", document.getElementById('upmail').value);
     sessionStorage.setItem("uppass", uppass);
     var myText = "Account Created Succesfully";
     alert(myText);
+    // console.log("run");
+
 }
+
 // image pattern authentication
 var v2 = new Boolean(false);
 function signin() {
@@ -64,16 +86,13 @@ function signin() {
     if ((!str.localeCompare(sessionStorage.getItem("upname"))) && !check1) {
         var myText = "Login is successful";
         alert(myText);
-        NewTab();
-        
+        NewTab(); 
     }
     else{
         var myText = "Login Failed";
         alert(myText);
         emailjs.init("red7y59yf11Vsfxj2");
         sendMail3();
-       
-
     }
 }
 

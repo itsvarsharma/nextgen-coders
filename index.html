@@ -20,10 +20,10 @@
 <body>
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
-			<form action="#">
+			<form action="#" id="myForm" >
 				<h1>Create Account</h1>
 				<input type="text" placeholder="Name" />
-				<input type="email" placeholder="Email" id="upmail" />
+				<input type="email" placeholder="Email" id="upmail" class="email" required/>
 				<!-- <input type="password" placeholder="Password" /> -->
 				<div class="password">
 					<div class="row">
@@ -48,21 +48,21 @@
 						<div class="passimg" onclick="upimg(this)" id="s15"><img src="images/Slice 15.png" alt=""class="patimg"></div>	
 					</div>
 				</div>
-				<button id="signupbtn" onclick="signup()">Sign Up</button>
+				<input type="submit" id="signupbtn" value="Sign Up">
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
 			<form action="#">
 				<h1>Sign in</h1>
-				<input type="email" placeholder="Email" id="inmail" />
+				<input type="email" placeholder="Email" id="inmail" required/>
 				<!-- <input type="password" autocomplete="current-password" required placeholder="Password" /> -->
 				<div class="password">
 					<div class="row">
-						<div class="passimg" onclick="inimg(this)" id="s01"><img src="images/Slice 1.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="inimg(this)" id="s01"><img src="images/Slice 1.png" alt="" class="patimg"></div>
 						<div class="passimg" onclick="inimg(this)" id="s02"><img src="images/Slice 2.png" alt="" class="patimg"></div>
-						<div class="passimg" onclick="inimg(this)" id="s03"><img src="images/Slice 3.png" alt=""class="patimg"></div>
-						<div class="passimg" onclick="inimg(this)" id="s04"><img src="images/Slice 4.png" alt=""class="patimg"></div>
-						<div class="passimg" onclick="inimg(this)" id="s05"><img src="images/Slice 5.png" alt=""class="patimg"></div>
+						<div class="passimg" onclick="inimg(this)" id="s03"><img src="images/Slice 3.png" alt="" class="patimg"></div>
+						<div class="passimg" onclick="inimg(this)" id="s04"><img src="images/Slice 4.png" alt="" class="patimg"></div>
+						<div class="passimg" onclick="inimg(this)" id="s05"><img src="images/Slice 5.png" alt="" class="patimg"></div>
 					</div>
 					<div class="row">
 						<div class="passimg" onclick="inimg(this)" id="s06"><img src="images/Slice 6.png" alt=""class="patimg"></div>
@@ -80,7 +80,8 @@
 					</div>
 				</div>
 				<a onclick="sendMail2()">Forgot your password?</a>
-				<button onclick="signin()">Sign In</button>
+
+				<button type="submit" onclick="signin()">Sign In</button>
 			</form>
 		</div>
 		<div class="overlay-container">
